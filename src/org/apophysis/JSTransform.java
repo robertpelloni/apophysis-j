@@ -107,36 +107,36 @@ public class JSTransform extends ScriptableObject {
 
 	void updateProperties() {
 		ScriptableObject.putProperty(this, "A",
-				Context.javaToJS(new Double(A), this));
+				Context.javaToJS(Double.valueOf(A), this));
 
 		ScriptableObject.putProperty(this, "B",
-				Context.javaToJS(new Double(B), this));
+				Context.javaToJS(Double.valueOf(B), this));
 
 		ScriptableObject.putProperty(this, "C",
-				Context.javaToJS(new Double(C), this));
+				Context.javaToJS(Double.valueOf(C), this));
 
 		ScriptableObject.putProperty(this, "D",
-				Context.javaToJS(new Double(D), this));
+				Context.javaToJS(Double.valueOf(D), this));
 
 		ScriptableObject.putProperty(this, "E",
-				Context.javaToJS(new Double(E), this));
+				Context.javaToJS(Double.valueOf(E), this));
 
 		ScriptableObject.putProperty(this, "F",
-				Context.javaToJS(new Double(F), this));
+				Context.javaToJS(Double.valueOf(F), this));
 
 		ScriptableObject.putProperty(this, "Color",
-				Context.javaToJS(new Double(Color), this));
+				Context.javaToJS(Double.valueOf(Color), this));
 
 		ScriptableObject.putProperty(this, "Symmetry",
-				Context.javaToJS(new Double(Symmetry), this));
+				Context.javaToJS(Double.valueOf(Symmetry), this));
 
 		ScriptableObject.putProperty(this, "Weight",
-				Context.javaToJS(new Double(Weight), this));
+				Context.javaToJS(Double.valueOf(Weight), this));
 
 		int nv = XForm.getNrVariations();
 		for (int i = 0; i < nv; i++) {
 			ScriptableObject.putProperty(this, XForm.getVariation(i).getName(),
-					Context.javaToJS(new Double(Variation[i]), this));
+					Context.javaToJS(Double.valueOf(Variation[i]), this));
 		}
 
 		int kp = 0;
@@ -144,7 +144,7 @@ public class JSTransform extends ScriptableObject {
 			int np = XForm.getVariation(i).getNrParameters();
 			for (int j = 0; j < np; j++) {
 				ScriptableObject.putProperty(this, XForm.getVariation(i)
-						.getParameterName(j), Context.javaToJS(new Double(
+						.getParameterName(j), Context.javaToJS(Double.valueOf(
 						Variable[kp]), this));
 				kp++;
 			}
