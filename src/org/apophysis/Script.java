@@ -1225,6 +1225,8 @@ public class Script extends MyThinlet implements Constants {
             ex.printStackTrace();
             System.out.println("--------------------------");
             _print(ex.toString());
+        } finally {
+        	Context.exit();
         }
 
         setBoolean(find("btnRun"), "enabled", true);

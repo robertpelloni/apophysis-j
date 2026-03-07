@@ -48,6 +48,9 @@ public class JSTransform extends ScriptableObject {
 
 	void init() {
 
+		Context cx = Context.getCurrentContext();
+		cx.initStandardObjects(this);
+		
 		ScriptableObject.putProperty(this, "Variation",
 				Context.javaToJS(Variation, this));
 
