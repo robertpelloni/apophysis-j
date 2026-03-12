@@ -1,7 +1,7 @@
 <Project projectName="apophysis-j">
   <Jar>./target/classes</Jar>
   <Jar>./target/plugin_classes</Jar>
-  <AuxClasspathEntry>./lib/js.jar</AuxClasspathEntry>
+  <AuxClasspathEntry>./lib/rhino.jar</AuxClasspathEntry>
   <SrcDir>./src</SrcDir>
   <SrcDir>./plugins</SrcDir>
   <SuppressionFilter>

@@ -1225,6 +1225,8 @@ public class Script extends MyThinlet implements Constants {
             ex.printStackTrace();
             System.out.println("--------------------------");
             _print(ex.toString());
+        } finally {
+        	Context.exit();
         }
 
         setBoolean(find("btnRun"), "enabled", true);
@@ -1286,7 +1288,7 @@ public class Script extends MyThinlet implements Constants {
 
         ScriptableObject.putProperty(scope, "TStringList", Context.javaToJS(stringlist, scope));
 
-        ScriptableObject.putProperty(scope, "PI", Context.javaToJS(new Double(Math.PI), scope));
+        ScriptableObject.putProperty(scope, "PI", Context.javaToJS(Double.valueOf(Math.PI), scope));
 
         ScriptableObject.putProperty(scope, "NXFORMS", Context.javaToJS(Integer.valueOf(NXFORMS), scope));
 

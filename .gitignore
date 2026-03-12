@@ -3,7 +3,10 @@ classes/
 plugin_classes/
 javadoc/
 jnlp/
+lib/
 .settings/
+.metadata/
+scripts/
 apophysis-j-*.jar
 apophysis-j-src-*.zip
 *.store

@@ -31,9 +31,13 @@
 		<mkdir dir="${jnlp.dir}"/>
 		<path id="apophysis-j.classpath">
 			<pathelement location="${classes.dir}"/>
-			<pathelement location="${lib.dir}/js.jar"/>
+			<pathelement location="${lib.dir}/rhino.jar"/>
 		</path>
 	</target>
+
+    <target name="pull" depends="-init">
+        <get src="https://repo1.maven.org/maven2/org/mozilla/rhino/1.9.1/rhino-1.9.1.jar" dest="${lib.dir}//rhino.jar" />
+    </target>
 
 	<target name="resources" depends="-init" description="copies resources to the classes directory">
     	<copy todir="${classes.dir}">
@@ -63,7 +67,7 @@
  		</replaceregexp>
 	</target>
 		
-	<target name="compile" depends="-init" description="compiles java files">
+	<target name="compile" depends="-init, pull" description="compiles java files">
 		<javac srcdir="${src.dir}"
 				destdir="${classes.dir}"
 				source="${javac.source}"
@@ -84,7 +88,7 @@
 		</javac>
 	</target>
 
-	<target name="jar" depends="compile" description="produces the apophysis-j jar file">
+	<target name="jar" depends="clean, -init, pull, compile, resources" description="produces the apophysis-j jar file">
 		<jar destfile="${target.dir}/apophysis-j-${apophysis-j.version}.jar">
 			<fileset dir="${classes.dir}">
 				<include name="**/*.class"/>
@@ -150,7 +154,7 @@
 		</javadoc>
 	</target>
 
-	<target name="build" depends="clean, -init, compile, resources, jar" description="builds the jar">
+	<target name="build" depends="clean, -init, pull, compile, resources, jar" description="builds the jar">
 	</target>
 	
 	<target name="jnlp" description="copy jars to jnlp directory">
@@ -178,7 +182,7 @@
 			<classpath>
 				<pathelement path="${target.dir}/apophysis-j-${apophysis-j.version}.jar"/>
 				<pathelement path="${target.dir}/apophysis-j-plugins-${apophysis-j.version}.jar"/>
-				<pathelement path="${lib.dir}/js.jar"/>
+				<pathelement path="${lib.dir}/rhino.jar"/>
 			</classpath>
 		</java>
 	</target>
