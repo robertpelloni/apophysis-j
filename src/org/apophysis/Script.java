@@ -680,7 +680,6 @@ public class Script extends MyThinlet implements Constants {
     /*****************************************************************************/
 
     public void _SaveFlame(String filename) {
-        // TODO - should not replace the file, but append the flame
         js2java();
         Global.main.saveXMLFile(cp, filename);
     }

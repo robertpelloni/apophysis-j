@@ -28,12 +28,15 @@
 package org.apophysis;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public interface Constants {
 
 	/****************************************************************************/
 
-	static final String VERSION = "2.9";
+	static final String VERSION = readVersion();
 	static final String APPNAME = "apophysis-j";
 
 	static final String DIRNAME = ".apophysis-j";
@@ -184,5 +187,13 @@ public interface Constants {
 	public int M_MAX_COM_LENGTH = 65500;
 
 	/****************************************************************************/
+
+	static String readVersion() {
+		try (BufferedReader br = new BufferedReader(new FileReader("docs/VERSION.md"))) {
+			return br.readLine().trim();
+		} catch (IOException e) {
+			return "Unknown";
+		}
+	}
 
 } // End of interface Constants
