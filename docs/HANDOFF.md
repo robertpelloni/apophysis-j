@@ -29,3 +29,8 @@
 ## 6. Library Inventory
 - **Rhino**: Downloaded dynamically (version 1.9.1) into `lib/rhino.jar`. Used for scripting.
 - **Thinlet**: Bundled in `src/com/thinlet/`. Used for the XML-based GUI layout.
+
+## Thinlet Structural Shifts & Fixes
+- Successfully fixed complex Thinlet logic related to scrolling layout bounds and tooltip tracking for complex arrays (lists, trees, tables).
+- Tooltips correctly hide on mouse wheel scrolling events.
+- Addressed inaccurate Javadocs in the ScriptConverter layer.

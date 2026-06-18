@@ -1021,14 +1021,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
                 text = getString(insidepart, "tooltip", null);
             }
         }
-                } else if (("list".equals(classname)) || ("table".equals(classname)) || ("tree".equals(classname))) {
-            if (insidepart instanceof Object[]) {
-                text = getString(insidepart, "tooltip", null);
-            }
-        } else if (("list".equals(classname)) || ("table".equals(classname)) || ("tree".equals(classname))) {
-            if (insidepart instanceof Object[]) {
-                text = getString(insidepart, "tooltip", null);
-            }
+        // TODO list table tree
         if (text == null) {
             text = getString(mouseinside, "tooltip", null);
         } else {
@@ -1124,9 +1117,9 @@ public class Thinlet extends Container implements Runnable, Serializable {
                                                                      // space
         int portheight = bounds.height - top - topgap - bottom - (2 * iborder); // vertical
                                                                                 // space
-        boolean hneed = contentwidth > portwidth && getBoolean(component, "scrollable", false); // horizontal scrollbar
+        boolean hneed = contentwidth > portwidth; // horizontal scrollbar
                                                   // required
-        boolean vneed = contentheight > (portheight - (hneed ? iscroll : 0)) && getBoolean(component, "scrollable", false); // vertical
+        boolean vneed = contentheight > (portheight - (hneed ? iscroll : 0)); // vertical
                                                                               // scrollbar
                                                                               // needed
         if (vneed) {
