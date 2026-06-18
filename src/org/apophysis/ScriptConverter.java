@@ -308,7 +308,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static void substitute(StringBuilder stringbuffer, Map<String, String> sub, int i, int j, String s) {
@@ -319,7 +319,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static void replaceWord(StringBuilder stringbuffer, Map<String, String> sub, String s1, String s2) {
@@ -336,7 +336,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static void replaceString(StringBuilder stringbuffer, Map<String, String> sub, String s1, String s2) {
@@ -353,7 +353,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static void processStructure(StringBuilder stringbuffer, Map<String, String> sub, String sname, Class<?> klass) {
@@ -375,7 +375,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static boolean processFormat(StringBuilder stringbuffer, Map<String, String> sub) {
@@ -457,7 +457,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static boolean processInputQuery(StringBuilder stringbuffer, Map<String, String> sub) {
@@ -495,7 +495,7 @@ public class ScriptConverter {
 
     /**
      * @param functions
-     *            TODO
+     *            the list of functions to process
      ***************************************************************************/
 
     private static boolean processProcedure(StringBuilder stringbuffer, List<String> functions) {
@@ -572,7 +572,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static boolean processWith(StringBuilder stringbuffer, Map<String, String> sub) {
@@ -620,7 +620,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static void processFields(StringBuilder stringbuffer, Map<String, String> sub, String varname, Class<?> klass) {
@@ -639,7 +639,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static boolean processCaseStatement(StringBuilder stringbuffer, Map<String, String> sub) {
@@ -687,7 +687,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static boolean processDeleteStatement(StringBuilder stringbuffer, Map<String, String> sub) {
@@ -732,7 +732,7 @@ public class ScriptConverter {
 
     /**
      * @param functions
-     *            TODO
+     *            the list of functions to process
      ***************************************************************************/
 
     private static void getNiladicFunctions(List<String> functions) {
@@ -821,7 +821,7 @@ public class ScriptConverter {
 
     /**
      * @param sub
-     *            TODO
+     *            the map to substitute strings with keys
      ***************************************************************************/
 
     private static void processFunctionCalls(StringBuilder stringbuffer, Map<String, String> sub) {
