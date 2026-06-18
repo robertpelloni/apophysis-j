@@ -5,3 +5,8 @@
 - Refactored `build.xml` to load version string directly from `docs/VERSION.md`.
 - Completed an in-depth codebase audit and added missing documentation (ROADMAP.md, VISION.md, TODO.md, HANDOFF.md, etc.).
 - Closed out the incomplete feature regarding appending flames in `Script.java`'s `_SaveFlame` method as the capability already existed.
+
+## [2.10.3] - 2026-06-18
+- Fixed Thinlet components (tree, list, table) tooltip retrieval.
+- Fixed Thinlet panel layout and correct scrolling calculation checks.
+- Ensured tooltips correctly hide when the mouse wheel is triggered.

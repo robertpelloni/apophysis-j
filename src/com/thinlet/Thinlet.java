@@ -1021,7 +1021,14 @@ public class Thinlet extends Container implements Runnable, Serializable {
                 text = getString(insidepart, "tooltip", null);
             }
         }
-        // TODO list table tree
+                } else if (("list".equals(classname)) || ("table".equals(classname)) || ("tree".equals(classname))) {
+            if (insidepart instanceof Object[]) {
+                text = getString(insidepart, "tooltip", null);
+            }
+        } else if (("list".equals(classname)) || ("table".equals(classname)) || ("tree".equals(classname))) {
+            if (insidepart instanceof Object[]) {
+                text = getString(insidepart, "tooltip", null);
+            }
         if (text == null) {
             text = getString(mouseinside, "tooltip", null);
         } else {
@@ -1117,9 +1124,9 @@ public class Thinlet extends Container implements Runnable, Serializable {
                                                                      // space
         int portheight = bounds.height - top - topgap - bottom - (2 * iborder); // vertical
                                                                                 // space
-        boolean hneed = contentwidth > portwidth; // horizontal scrollbar
+        boolean hneed = contentwidth > portwidth && getBoolean(component, "scrollable", false); // horizontal scrollbar
                                                   // required
-        boolean vneed = contentheight > (portheight - (hneed ? iscroll : 0)); // vertical
+        boolean vneed = contentheight > (portheight - (hneed ? iscroll : 0)) && getBoolean(component, "scrollable", false); // vertical
                                                                               // scrollbar
                                                                               // needed
         if (vneed) {
@@ -2928,7 +2935,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
         } else if (id == MOUSE_WHEEL) {
             Rectangle port = getRectangle(mouseinside, ":port");
             if (port != null) { // is scrollable
-                // TODO hide tooltip?
+                hideTip(); // hide tooltip
                 Rectangle bounds = getRectangle(mouseinside, "bounds");
                 try { // mouse wheel is supported since 1.4 thus it use
                       // reflection
