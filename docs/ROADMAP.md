@@ -8,5 +8,5 @@
 
 ## Major Long-Term Plans
 - Add comprehensive unit tests.
-- Integrate a modern build system like Maven or Gradle.
+
 - Create automated CI/CD pipeline.

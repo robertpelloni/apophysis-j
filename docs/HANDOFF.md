@@ -34,3 +34,8 @@
 - Successfully fixed complex Thinlet logic related to scrolling layout bounds and tooltip tracking for complex arrays (lists, trees, tables).
 - Tooltips correctly hide on mouse wheel scrolling events.
 - Addressed inaccurate Javadocs in the ScriptConverter layer.
+
+## Build System Migration (Maven)
+- The project has been successfully migrated to use Maven (`pom.xml`) alongside the legacy Ant `build.xml`.
+- Java source code remains in `src/` configured via the POM, avoiding massive git history disruption.
+- The `target/` directory is now explicitly ignored.
