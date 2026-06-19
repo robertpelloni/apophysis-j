@@ -41,3 +41,7 @@
 ## [2.10.13] - 2026-06-19
 - Further expanded unit testing coverage adding `ThinletTest.java` to guarantee safe UI XML binding tests.
 - Moved 'Add comprehensive unit tests' to Completed in the ROADMAP.
+
+## [2.10.14] - 2026-06-19
+- Concluded architectural review of the Scripting Engine.
+- Deferred Rhino migration to preserve Java 8 backwards compatibility and user script stability.
