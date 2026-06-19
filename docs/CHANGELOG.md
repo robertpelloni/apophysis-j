@@ -24,3 +24,6 @@
 ## [2.10.8] - 2026-06-19
 - Expanded unit test coverage with `ScriptConverterTest.java`.
 - Transitioned `ROADMAP.md` to feature long-term goals (Headless Rendering, GraalVM migration) reflecting current codebase completion.
+
+## [2.10.9] - 2026-06-19
+- Further expanded unit testing coverage adding `TriangleTest.java` and `PivotTest.java` to test core geometry utilities.

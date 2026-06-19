@@ -46,3 +46,7 @@
 ## Unit Testing Expansion
 - Continued building out the unit test suite by creating `ScriptConverterTest.java`.
 - All immediate roadmap tasks and UI bugs have been cleared. Focus is pivoting to architectural modernization (Headless rendering, GraalVM) and broader test coverage.
+
+## Math Coverage Expansion
+- Added `TriangleTest.java` to test the triangle transform and mapping functions.
+- Added `PivotTest.java` stub.
