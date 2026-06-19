@@ -10,3 +10,6 @@
 - Fixed Thinlet components (tree, list, table) tooltip retrieval.
 - Fixed Thinlet panel layout and correct scrolling calculation checks.
 - Ensured tooltips correctly hide when the mouse wheel is triggered.
+
+## [2.10.5] - 2026-06-19
+- Ignored target directory and synchronized maven pom version with VERSION.md.

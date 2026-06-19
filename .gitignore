@@ -10,3 +10,4 @@ scripts/
 apophysis-j-*.jar
 apophysis-j-src-*.zip
 *.store
+target/
