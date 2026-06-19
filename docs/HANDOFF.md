@@ -39,3 +39,6 @@
 - The project has been successfully migrated to use Maven (`pom.xml`) alongside the legacy Ant `build.xml`.
 - Java source code remains in `src/` configured via the POM, avoiding massive git history disruption.
 - The `target/` directory is now explicitly ignored.
+
+## Build System Migration (Maven)
+- Configured GitHub Actions CI/CD Pipeline to trigger on push and PR to ensure tests pass.

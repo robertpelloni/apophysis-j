@@ -1,6 +1,7 @@
 # ROADMAP
 
 ## Completed
+- Create automated CI/CD pipeline.
 - Improve `Thinlet.java` to support list, table, tree elements.
 - Implement correct scrolling for panels.
 - Hide tooltip in certain circumstances.
@@ -11,4 +12,3 @@
 - Add comprehensive unit tests.
 
 ## Major Long-Term Plans
-- Create automated CI/CD pipeline.
