@@ -13,3 +13,7 @@
 
 ## [2.10.5] - 2026-06-19
 - Ignored target directory and synchronized maven pom version with VERSION.md.
+
+## [2.10.6] - 2026-06-19
+- Integrated JUnit 4 testing framework into Maven configuration.
+- Created foundational `GlobalTest` to establish unit testing patterns.
