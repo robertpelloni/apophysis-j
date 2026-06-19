@@ -50,3 +50,6 @@
 ## Math Coverage Expansion
 - Added `TriangleTest.java` to test the triangle transform and mapping functions.
 - Added `PivotTest.java` stub.
+
+## Math Coverage Expansion
+- Added `VariationTest.java` covering plugin base class mutations and standard API responses using `BlobVariation`.

@@ -34,3 +34,6 @@
 
 ## [2.10.11] - 2026-06-19
 - Further expanded unit testing coverage adding `RendererTest.java` to begin testing decoupled GUI rendering.
+
+## [2.10.12] - 2026-06-19
+- Further expanded unit testing coverage adding `VariationTest.java` to test the foundational plugin mutation parameters.
