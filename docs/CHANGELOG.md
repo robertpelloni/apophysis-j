@@ -49,3 +49,6 @@
 ## [2.10.15] - 2026-06-19
 - Initiated phase of rendering decoupling and headless UI abstraction via testing.
 - Cleared final active roadmap items in preparation for handoff.
+
+## [2.10.16] - 2026-06-19
+- Prepared final architectural state for successor handoff, documenting Rhino Scripting limitations and Headless Renderer challenges.
