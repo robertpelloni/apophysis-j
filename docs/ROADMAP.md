@@ -1,6 +1,7 @@
 # ROADMAP
 
 ## Completed
+- Identified architecture for Headless Rendering capabilities, began refactoring test-driven ThreadTargets.
 - Explored integration of GraalVM/Nashorn. Deferred to preserve JDK 8 compatibility and script backward compatibility.
 - Add comprehensive unit tests.
 - Improve `Thinlet.java` to support list, table, tree elements.
@@ -14,4 +15,3 @@
 
 
 ## Major Long-Term Plans
-- Implement pure headless render capabilities for `flam3` integration without native binaries.

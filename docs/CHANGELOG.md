@@ -45,3 +45,7 @@
 ## [2.10.14] - 2026-06-19
 - Concluded architectural review of the Scripting Engine.
 - Deferred Rhino migration to preserve Java 8 backwards compatibility and user script stability.
+
+## [2.10.15] - 2026-06-19
+- Initiated phase of rendering decoupling and headless UI abstraction via testing.
+- Cleared final active roadmap items in preparation for handoff.
