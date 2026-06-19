@@ -31,3 +31,6 @@
 ## [2.10.10] - 2026-06-19
 - Initiated architectural feasibility study for native headless rendering.
 - Updated MEMORY.md to document the tight coupling between `Thinlet` UI elements and `Renderer`/`ThreadTarget` interfaces.
+
+## [2.10.11] - 2026-06-19
+- Further expanded unit testing coverage adding `RendererTest.java` to begin testing decoupled GUI rendering.
