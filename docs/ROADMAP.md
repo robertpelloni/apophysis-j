@@ -1,6 +1,7 @@
 # ROADMAP
 
 ## Completed
+- Add comprehensive unit tests.
 - Improve `Thinlet.java` to support list, table, tree elements.
 - Implement correct scrolling for panels.
 - Hide tooltip in certain circumstances.
@@ -9,7 +10,7 @@
 - Create automated CI/CD pipeline.
 
 ## In Progress
-- Add comprehensive unit tests.
+
 
 ## Major Long-Term Plans
 - Implement pure headless render capabilities for `flam3` integration without native binaries.

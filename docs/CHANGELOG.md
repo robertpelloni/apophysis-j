@@ -37,3 +37,7 @@
 
 ## [2.10.12] - 2026-06-19
 - Further expanded unit testing coverage adding `VariationTest.java` to test the foundational plugin mutation parameters.
+
+## [2.10.13] - 2026-06-19
+- Further expanded unit testing coverage adding `ThinletTest.java` to guarantee safe UI XML binding tests.
+- Moved 'Add comprehensive unit tests' to Completed in the ROADMAP.
