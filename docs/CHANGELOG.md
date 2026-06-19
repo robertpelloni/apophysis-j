@@ -27,3 +27,7 @@
 
 ## [2.10.9] - 2026-06-19
 - Further expanded unit testing coverage adding `TriangleTest.java` and `PivotTest.java` to test core geometry utilities.
+
+## [2.10.10] - 2026-06-19
+- Initiated architectural feasibility study for native headless rendering.
+- Updated MEMORY.md to document the tight coupling between `Thinlet` UI elements and `Renderer`/`ThreadTarget` interfaces.
