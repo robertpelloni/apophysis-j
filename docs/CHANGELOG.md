@@ -20,3 +20,7 @@
 
 ## [2.10.7] - 2026-06-19
 - Implemented automated CI/CD pipeline using GitHub Actions for Maven.
+
+## [2.10.8] - 2026-06-19
+- Expanded unit test coverage with `ScriptConverterTest.java`.
+- Transitioned `ROADMAP.md` to feature long-term goals (Headless Rendering, GraalVM migration) reflecting current codebase completion.

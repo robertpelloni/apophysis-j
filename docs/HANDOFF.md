@@ -42,3 +42,7 @@
 
 ## Build System Migration (Maven)
 - Configured GitHub Actions CI/CD Pipeline to trigger on push and PR to ensure tests pass.
+
+## Unit Testing Expansion
+- Continued building out the unit test suite by creating `ScriptConverterTest.java`.
+- All immediate roadmap tasks and UI bugs have been cleared. Focus is pivoting to architectural modernization (Headless rendering, GraalVM) and broader test coverage.
