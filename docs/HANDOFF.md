@@ -8,13 +8,13 @@
 - **Build System:** The project successfully transitioned from legacy Ant (`build.xml`) to Maven (`pom.xml`). The `src/` directory layout was preserved to avoid massive Git history disruption.
 - **CI/CD:** We implemented a GitHub Actions workflow (`.github/workflows/maven.yml`) which triggers `mvn -B package` on pull requests and pushes to `master`.
 - **Testing:** A foundational JUnit 4 testing suite has been established in `src/test/java/`. Coverage includes UI initialization (`ThinletTest.java`), string formatting (`ScriptConverterTest.java`), core math transformations (`TriangleTest.java`, `VariationTest.java`), and isolated dummy UI render threads (`RendererTest.java`).
-- **Code Modernizations:** Replaced heavily deprecated classes such as `AppletLauncher.java`, modernized `Runtime.exec` with `ProcessBuilder`, and migrated legacy UI and Security manager conventions (`AccessController`).
+- **Code Modernizations:** Replaced heavily deprecated classes such as `AppletLauncher.java`, modernized `Runtime.exec` with `ProcessBuilder`, and migrated legacy UI and Security manager conventions (`AccessController`). Addressed `-Xlint:deprecation` warnings in `XForm.java` and `Variation.java` by using `getDeclaredConstructor().newInstance()` and modern `URI.toURL()` strategies.
 
-## Executive Protocol: Repository Synchronization Session
+## Executive Protocol: Repository Synchronization Session (v2.10.20)
 - **Actions:** Executed a comprehensive repository refresh.
-- **Merge State:** Verified upstream tracking. Fetched from origin and merged remote `master` successfully. Evaluated and cleaned up local feature branches (merged existing changes and deleted `jules-1519938167992140499-09bea828` as it was redundant/fully merged). Resolved a stash conflict gracefully in `TEST_VALIDATION.md`.
-- **Submodules:** Recursive update executed, no active local modifications disrupting sync.
-- **Version Bump:** Bumped system version to `2.10.19`.
+- **Merge State:** Verified upstream tracking. Merged outstanding local feature branches related to deprecation cleanup directly into `master`.
+- **Submodules:** Recursive update executed.
+- **Version Bump:** Bumped system version to `2.10.20`.
 
 ## Known Architectural Blockers
 - **Rhino Engine:** The Javascript engine relies on Rhino 1.7.14. Migrating this to GraalVM or Nashorn has been aborted because `Context.enter()` bindings are deeply embedded in the `JSTransform` classes and would brutally break user scripts running on Java 8 environments.
