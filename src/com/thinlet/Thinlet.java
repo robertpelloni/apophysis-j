@@ -6382,7 +6382,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
             setKeystrokeImpl(component, key, value);
         } else if ("bean".equals(definition[0])) {
             try {
-                Object beanObject = Class.forName(value).newInstance();
+                Object beanObject = Class.forName(value).getDeclaredConstructor().newInstance();
                 set(component, key, beanObject);
             } catch (Exception exc) {
                 throw new IllegalArgumentException(value);

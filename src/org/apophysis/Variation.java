@@ -124,7 +124,7 @@ public abstract class Variation implements Computation {
 		Variation variation = null;
 
 		try {
-			variation = getClass().newInstance();
+			variation = getClass().getDeclaredConstructor().newInstance();
 		} catch (Exception ex) {
 		}
 

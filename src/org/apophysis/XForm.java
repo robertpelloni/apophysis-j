@@ -35,8 +35,6 @@ import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Files;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -359,22 +357,17 @@ public class XForm implements Constants {
             return Collections.<Variation> emptyList();
         }
 
-        loader = AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {
-            @Override
-            public ClassLoader run() {
-                try {
-                    URL[] urls = new URL[jars.length];
-                    for (int i = 0; i < jars.length; i++) {
-                        urls[i] = new URL("jar", "", "file://" + jars[i].getAbsolutePath() + "!/");
-                    }
-
-                    return new URLClassLoader(urls);
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                    return null;
-                }
+        try {
+            URL[] urls = new URL[jars.length];
+            for (int i = 0; i < jars.length; i++) {
+                urls[i] = new java.net.URI("jar:" + jars[i].toURI().toString() + "!/").toURL();
             }
-        });
+
+            loader = new URLClassLoader(urls, Variation.class.getClassLoader());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            loader = null;
+        }
 
         if (loader == null) {
             return Collections.<Variation> emptyList();
@@ -392,7 +385,7 @@ public class XForm implements Constants {
                         try {
                             clsName = clsName.replace('/', '.').replace('\\', '.');
                             Class<?> klass = loader.loadClass(clsName);
-                            Object o = klass.newInstance();
+                            Object o = klass.getDeclaredConstructor().newInstance();
                             if (o instanceof Variation) {
                                 Variation v = (Variation) o;
                                 int ind = getVariationIndex(v.getName());
@@ -467,7 +460,7 @@ public class XForm implements Constants {
         Object o = null;
         try {
             Class<?> klass = loader.loadClass(pname + "." + cname);
-            o = klass.newInstance();
+            o = klass.getDeclaredConstructor().newInstance();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
