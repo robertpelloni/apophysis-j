@@ -16,9 +16,10 @@ The following core application modules have been successfully targeted and verif
 4.  **`VariationTest.java`**: Validated plugin logic by instantiating `BlobVariation`, checking arrays, configuration setters/getters, and parameter mappings.
 5.  **`ScriptConverterTest.java`**: Verified script string formatting transformations.
 6.  **`ThinletTest.java`**: Instantiated the monolithic `Thinlet` framework in an isolated test environment to verify XML node initialization parsing without throwing GUI exception flags.
-7.  **`RendererTest.java`**: Mocked the `ThreadTarget` implementations, proving that `Renderer.java` can be logically isolated and executed outside of massive `MyThinlet` GUI ties, paving the way for future Headless Rendering.
+7.  **`RendererTest.java`**: Now uses `HeadlessRendererTarget` to validate that `Renderer.java` can be logically isolated and executed completely headlessly without AWT/Swing components, proving the Headless Rendering pipeline.
 
 ## CI/CD
 All unit tests are confirmed to successfully hook into the GitHub Actions pipeline.
 
 ## Validation Status: SUCCESS
+8.  **`HeadlessRendererTargetTest.java`**: Verified that the headless implementation correctly tracks progress and completion states.
