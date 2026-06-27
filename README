@@ -1,25 +1,20 @@
 apophysis-j is a port in java of the famous fractal flame editor apophysis for Windows. It is based on the 
-version 2.07 beta of apophysis. It should run on any machine equipped with a decent java environment (1.5 or higher) 
+version 2.07 beta of apophysis. It should run on any machine equipped with a decent java environment (1.8 or higher)
 and bring the capabilities of this wonderful program to mac and linux users at last.
 
-DOES ANYONE KNOW THE NEW SHEEP SERVER URL?
+This project is now built with Maven.
 
-This project uses ant to build, use
+From the main directory, build the project and execute all unit tests using:
+`mvn clean install`
 
-ant
+Or to simply compile and package:
+`mvn clean package`
 
-from the main directory to build the jar
+To run the output JAR:
+`java -jar target/apophysis-j-[version].jar`
 
-If you wish to build a release, including a jnlp version, you will need to create a keystore, using 
-keytool like this:
+Releases are automatically verified and built through our GitHub Actions CI pipeline.
 
-keytool -genkey -alias apophysis-j -keypass {pass} -keystore apophysis-j.store -storepass {pass}
-
-You will be prompted for the passwords when you run
-
-ant release
-
-There are also eclipse project files here.
 -----------------------------------------------------------
 Written/Ported by Jean-Francois Bouzereau
 Now also maintained by Dave Brosius
@@ -31,5 +26,3 @@ Apophysis Copyright (C) 2007 Piotr Borys, Peter Sdobnov
 
 based on Flam3 ( http://www.flam3.com )
 Copyright (C) 1992-2006  Scott Draves <source@flam3.com>
-
-
