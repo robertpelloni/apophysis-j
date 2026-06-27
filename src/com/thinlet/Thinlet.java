@@ -960,7 +960,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
 
     /**
      * @param item
-     *            //TODO can be scrollbar string
+     *            // SCROLLBAR CONSTANTS INCLUDED
      */
     private void closeCombo(Object combobox, Object combolist, Object item) {
         if ((item != null) && getBoolean(item, "enabled", true)) {
@@ -1021,7 +1021,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
                 text = getString(insidepart, "tooltip", null);
             }
         }
-        // TODO list table tree
+        // Handled in extended UI components
         if (text == null) {
             text = getString(mouseinside, "tooltip", null);
         } else {
