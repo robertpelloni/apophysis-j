@@ -25,4 +25,4 @@ java -jar target/apophysis-j-*.jar
 ```
 
 ## Releases
-Release artifacts are automatically built by the Maven pipeline and the `package` lifecycle step.
+Release artifacts are automatically built by the GitHub Actions CI pipeline on push to `master`. The compiled JAR is stored as a downloadable artifact in the Actions tab.
