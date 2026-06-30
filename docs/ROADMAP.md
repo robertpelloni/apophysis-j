@@ -12,6 +12,7 @@
 - [x] Create automated CI/CD pipeline.
 
 ## In Progress
+- Refactor UI: Extract monolithic `Thinlet` logic to allow JavaFX implementation in the future.
 
 
 ## Major Long-Term Plans
