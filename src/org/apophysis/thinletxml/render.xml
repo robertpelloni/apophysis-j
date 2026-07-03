@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <panel name="render" columns="1" width="463" height="390" >
 
-	<tabbedpane weightx="1" weighty="1" halign="fill" valign="fill"
-		name="PageCtrl"
-		placement="top" selected="0" >
+	<panel weightx="1" weighty="1" halign="fill" valign="fill"
+		name="PageCtrl" scrollable="true" columns="1"
+		>
 
-		<tab name="TabSettings" text=" Settings ">
+		<panel name="TabSettings" text=" Settings " border="true" >
 
 			<panel weightx="1" weighty="1"
 				halign="fill" valign="fill"
@@ -19,6 +19,7 @@
 					>
 
 					<combobox name="cmbPreset"
+						tooltip="Select a rendering preset profile"
 						weightx="1"  halign="fill"
 						editable="false"
 						action="cmbPresetChange(this)"
@@ -47,10 +48,12 @@
 						/>
 
 					<textfield name="txtFilename"
+						tooltip="Specify the output image file path"
 						weightx="1" halign="fill"
 						/>
 
 					<button name="btnBrowse" icon="/images/browser.gif"
+						tooltip="Browse to select an output file"
 						action="btnBrowseClick()"
 						/>
 				</panel>
@@ -74,6 +77,7 @@
 							weightx="1" halign="fill" alignment="right"
 							/>
 						<combobox name="cbWidth"
+							tooltip="Set the width of the rendered image in pixels"
 							weightx="1" halign="fill"
 							action="widthChanged(this,0)"
 							perform="widthChanged(this,1)"
@@ -95,6 +99,7 @@
 							/>
 
 						<combobox name="cbHeight"
+							tooltip="Set the height of the rendered image in pixels"
 							weightx="1" halign="fill"
 							action="heightChanged(this,0)"
 							perform="heightChanged(this,1)"
@@ -113,6 +118,7 @@
 
 						<checkbox colspan="2" text="Maintain aspect ratio"
 							selected="true"
+							tooltip="Maintain image aspect ratio"
 							name="chkMaintain"
 							/>
 					</panel>	
@@ -133,6 +139,7 @@
 							weightx="1" halign="fill" alignment="right"
 							/>
 						<textfield name="txtDensity"
+							tooltip="Set the render sample density (quality)"
 							weightx="1" halign="fill"
 							perform="paramChanged()"
 							/>
@@ -141,6 +148,7 @@
 							weightx="1" halign="fill" alignment="right"
 							/>
 						<textfield name="txtFilterRadius"
+							tooltip="Set the spatial filter radius"
 							weightx="1" halign="fill"
 							perform="paramChanged()"
 							/>
@@ -150,6 +158,7 @@
 							weightx="1" halign="fill" alignment="right"
 							/>
 						<textfield name="txtOversample"
+							tooltip="Set the spatial oversample multiplier"
 							weightx="1" halign="fill"
 							perform="paramChanged()"
 							/>
@@ -207,6 +216,7 @@
 							>
 
 						<checkbox name="chkWatermark" text="Watermark"
+							tooltip="Apply a watermark to the rendered image"
 							colspan="2"
 							/>
 
@@ -214,11 +224,13 @@
 
 						<checkbox name="chkComment"	 colspan="2"
 							text="Flame definition in image comments"
+							tooltip="Embed flame parameters inside the image metadata"
 							action="chkCommentClick(this)"
 							/>
 
 						<checkbox name="chkPassword" colspan="2"
 							text="Encrypted with password"
+							tooltip="Encrypt embedded flame parameters with a password"
 							colspan="2" 
 							/>
 
@@ -226,18 +238,18 @@
 	
 				</panel>	
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="TabOutput" text=" Output " >
+		<panel name="TabOutput" text=" Output " border="true" >
 
 			<textarea name="output" weightx="1" weighty="1"
 				halign="fill" valign="fill" 
 				font="Courier 12"
 				editable="false"
 				/>
-		</tab>
+		</panel>
 
-	</tabbedpane>
+	</panel>
 
 	<panel  columns="1" weightx="1" weighty="0"
 		halign="fill" valign="bottom"
@@ -252,19 +264,23 @@
 			<label text=" " weightx="1" halign="fill" />
 
 			<button name="btnPause" text=" Pause "
+				tooltip="Pause or resume rendering"
 				action="btnPauseClick(this)"
 				/>
 
 			<button name="btnRender" text=" Render "
+				tooltip="Start the rendering process"
 				action="btnRenderClick()"
 				/>
 
 			<button name="btnCancel" text=" Cancel "
+				tooltip="Cancel the current render"
 				action="btnCancelClick()"
 				/>
 		</panel>
 
 		<progressbar name="ProgressBar"
+			tooltip="Rendering progress"
 			weightx="1" weighty="1"
 			halign="fill" valign="fill"
 			minimum="0" maximum="100" value="0"
@@ -273,6 +289,7 @@
 			/>
 
 		<label name="StatusBar"  text=" "
+			tooltip="Rendering status messages"
 			weightx="1" weighty="1"
 			halign="fill" valign="fill"
 			alignment="center"

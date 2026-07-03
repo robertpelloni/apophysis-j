@@ -28,6 +28,7 @@
 package org.apophysis;
 
 import java.util.Random;
+import java.util.List;
 
 public class Apophysis implements Constants {
 
@@ -44,6 +45,48 @@ public class Apophysis implements Constants {
             Global.randomGenerator = new Random();
 
             Global.main = new Main(title, "/org/apophysis/thinletxml/main.xml", 800, 600);
+
+            boolean headless = false;
+            String inFile = null;
+            String outFile = null;
+
+            for (int i = 0; i < args.length; i++) {
+                if (args[i].equals("--headless")) {
+                    headless = true;
+                } else if (args[i].equals("--in") && i + 1 < args.length) {
+                    inFile = args[++i];
+                } else if (args[i].equals("--out") && i + 1 < args.length) {
+                    outFile = args[++i];
+                }
+            }
+
+            if (headless) {
+                System.out.println("Starting in Headless Mode...");
+                if (inFile != null && outFile != null) {
+                    System.out.println("Loading flame: " + inFile);
+                    List<ControlPoint> flames = Global.main.openXMLFile(inFile);
+                    if (flames != null && !flames.isEmpty()) {
+                        ControlPoint cp = flames.get(0);
+                        Renderer renderer = new Renderer(new ConsoleThreadTarget());
+                        renderer.setCP(cp);
+
+                        System.out.println("Rendering...");
+                        renderer.render();
+
+                        System.out.println("Saving to: " + outFile);
+                        renderer.imager.saveImage(outFile, false, false, false);
+                        System.out.println("Headless rendering complete.");
+                    } else {
+                        System.out.println("Error: Failed to parse flame file or it is empty.");
+                    }
+                } else {
+                    System.out.println("Error: Headless mode requires --in <file.flame> and --out <file.jpg|png> arguments.");
+                }
+
+                System.exit(0);
+                return;
+            }
+
             Global.editor = new Editor("Editor", "/org/apophysis/thinletxml/editor.xml", 760, 556);
             Global.adjust = new Adjust("Adjust", "/org/apophysis/thinletxml/adjust.xml", 450, 380);
             Global.browser = new Browser("Browser", "/org/apophysis/thinletxml/browser.xml", 500, 350);

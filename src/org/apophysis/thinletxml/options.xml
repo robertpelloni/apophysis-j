@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <panel name="options" columns="1" width="463" height="390" >
 
-	<tabbedpane weightx="1" weighty="1" halign="fill" valign="fill"
-		name="Tabs"
-		placement="top" selected="0" >
+	<panel weightx="1" weighty="1" halign="fill" valign="fill"
+		name="Tabs" scrollable="true" columns="1"
+		>
 
-		<tab name="GeneralPage" text=" General ">
+		<panel name="GeneralPage" text=" General " border="true" >
 
 			<panel weightx="1" weighty="1" halign="fill" valign="fill"
 				left="10" right="10" top="20" bottom="20" gap="20"
@@ -18,6 +18,7 @@
 
 					<label text="Internal buffer depth" />
 					<combobox name="cbInternalBitsPerSample"
+						tooltip="Sets the bit depth for the internal rendering buffer. Higher values increase precision but use more memory."
 						selected="0"
 						editable="false" >
 						<choice text="32-bit integer"   />
@@ -29,7 +30,7 @@
 
 					<label text="   " />
 					<label text="JPEG quality" />
-					<combobox name="txtJPEGQuality" >
+					<combobox name="txtJPEGQuality" tooltip="Sets the quality of the saved JPEG images. Ranges from 60 (lowest) to 120 (highest)." >
 						<choice text="60" />
 						<choice text="80" />
 						<choice text="100" />
@@ -63,6 +64,7 @@
 					<panel columns="2" weightx="1" halign="fill"
 						gap="5" >
 						<textfield columns="30" name="txtWatermark"
+							tooltip="Default watermark text"
 							weightx="1" halign="fill"
 							/>
 						<button text="" icon="/images/browser.gif"
@@ -91,6 +93,7 @@
 					<panel columns="2" weightx="1" halign="fill"
 						gap="5" >
 						<textfield columns="30" name="txtSoundFile"
+							tooltip="Sound file to play on render completion"
 							weightx="1" halign="fill"
 							/>
 						<button text="" icon="/images/browser.gif"
@@ -133,9 +136,9 @@
 
 				</panel>
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="EditorPage" text=" Editor " >
+		<panel name="EditorPage" text=" Editor " border="true" >
 
 			<panel weightx="1" weighty="1" halign="fill" valign="fill"	
 				left="5" right="5" top="20" bottom="0" gap="10"
@@ -271,9 +274,9 @@
 		,			
 				</panel>
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="DisplayPage" text=" Display " >
+		<panel name="DisplayPage" text=" Display " border="true" >
 
 			<panel weightx="1" weighty="1" halign="fill" valign="fill"
 				left="5" right="5" top="20" bottom="0" gap="10"
@@ -291,32 +294,38 @@
 					<label text="Quality :"	
 						weightx="1" halign="fill" alignment="right" />
 					<textfield  name="txtSampleDensity"
+						tooltip="Default render sample density"
 						/>
 
 					<label text="Gamma :"
 						weightx="1" halign="fill" alignment="right" />
 					<textfield name="txtGamma"
+						tooltip="Default render gamma"
 						/>
 
 					<label text="Brightness :"
 						weightx="1" halign="fill" alignment="right" />
 					<textfield name="txtBrightness"
+						tooltip="Default render brightness"
 						/>
 
 					<label text="Vibrancy :"
 						weightx="1" halign="fill" alignment="right" />
 					<textfield name="txtVibrancy"
+						tooltip="Default render vibrancy"
 						/>
 
 	
 					<label text="Oversample :"	
 						weightx="1" halign="fill" alignment="right" />
 					<textfield name="txtOversample"
+						tooltip="Default spatial oversample multiplier"
 						/>
 
 					<label text="Filter radius :"	
 						weightx="1" halign="fill" alignment="right" />
 					<textfield name="txtFilterRadius"
+						tooltip="Default spatial filter radius"
 						/>
 
 					<separator colspan="2" />
@@ -346,18 +355,21 @@
 						weightx="1"  halign="fill"  alignment="right"
 						/>
 					<textfield name="txtLowQuality"
+						tooltip="Density for Low Quality preset"
 						/>
 
 					<label text="Medium quality :"
 						weightx="1"  halign="fill"  alignment="right"
 						/>
 					<textfield name="txtMediumQuality"
+						tooltip="Density for Medium Quality preset"
 						/>
 			
 					<label text="High quality :"	
 						weightx="1"  halign="fill"  alignment="right"
 						/>
 					<textfield name="txtHighQuality"
+						tooltip="Density for High Quality preset"
 						/>
 			
 					<separator colspan="2" />
@@ -418,9 +430,9 @@
 				</panel>
 
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="RandomPage" text=" Random " >
+		<panel name="RandomPage" text=" Random " border="true" >
 
 			<panel weightx="1" weighty="1" halign="fill" valign="fill"
 				left="10" right="10" top="20" bottom="20" gap="20"
@@ -546,9 +558,9 @@
 
 				</panel>
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="VariationsPage" text=" Variations " >
+		<panel name="VariationsPage" text=" Variations " border="true" >
 			
 			<panel weightx="2" weighty="1" halign="fill" valign="fill"
 				columns="4" left="5" right="5" top="10" bottom="0"
@@ -588,9 +600,9 @@
 						/>
 				</panel>
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="TabSheet1" text=" Gradient " >
+		<panel name="TabSheet1" text=" Gradient " border="true" >
 
 			<panel columns="3" weightx="1" weighty="1"
 				halign="fill" valign="fill"
@@ -743,9 +755,9 @@
 				
 				</panel>
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="SheepPage" text=" Sheep " >
+		<panel name="SheepPage" text=" Sheep " border="true" >
 			<panel columns="2" weightx="1" weighty="1"
 				halign="fill" valign="top" 
 				left="5" right="5" gap="10" top="10"
@@ -799,12 +811,12 @@
 					columns="30"
 					/>	
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="TabSheet6" text=" UPR " >
-		</tab>
+		<panel name="TabSheet6" text=" UPR " border="true" >
+		</panel>
 
-		<tab name="PathsPage" text=" Paths " >
+		<panel name="PathsPage" text=" Paths " border="true" >
 
 			<panel columns="3"
 				top="10" bottom="10" left="5" right="5" gap="10"
@@ -867,9 +879,9 @@
 
 			</panel>
 
-		</tab>
+		</panel>
 
-	</tabbedpane>
+	</panel>
 
 
 	<panel columns="3" weightx="1" weighty="0" 

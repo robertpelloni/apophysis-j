@@ -4,7 +4,7 @@
 
   <groupId>org.apophysis</groupId>
   <artifactId>apophysis-j</artifactId>
-  <version>2.10.19</version>
+  <version>2.10.19-rc1</version>
   <packaging>jar</packaging>
 
   <name>apophysis-j</name>
@@ -57,6 +57,30 @@
             <exclude>test/**</exclude>
           </excludes>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.4.2</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>org.apophysis.Apophysis</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

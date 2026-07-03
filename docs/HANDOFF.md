@@ -20,6 +20,12 @@
 - **Rhino Engine:** The Javascript engine relies on Rhino 1.7.14. Migrating this to GraalVM or Nashorn has been aborted because `Context.enter()` bindings are deeply embedded in the `JSTransform` classes and would brutally break user scripts running on Java 8 environments.
 - **Headless Renderer:** Achieving a pure Java headless renderer scaling across cloud pipelines is extremely difficult because the core `Renderer` uses `ThreadTarget` implementations that are inherently tethered to the aging `Thinlet` GUI framework root.
 
+## Deployment & Testing Status (v2.10.19)
+- **Validation**: The automated test suite validation phase is complete. Running `mvn verify` successfully passes 8 unit tests without failures or regressions.
+- **Staging Deployment**: The deployment artifact was successfully packaged. We resolved a startup `UnknownHostException` crash (safely bypassed legacy `electricsheep` network calls) and a runtime `NoClassDefFoundError` (implemented `maven-assembly-plugin` to output a fat executable jar containing Rhino).
+- **Headless Environments**: Documented the use of `xvfb-run` to emulate a framebuffer for the Thinlet UI layer in `DEPLOY.md`.
+- **UI Update**: Added comprehensive XML tooltips across the primary editors (render, options, editor) to ensure intuitive workflow coverage.
+
 ## Next Steps for Successor Models
 - **Monitor the Pipeline:** Ensure GitHub actions run successfully.
 - **Target JDK:** Retain Java 1.8 compatibility to avoid disrupting the massive legacy fractal user base.

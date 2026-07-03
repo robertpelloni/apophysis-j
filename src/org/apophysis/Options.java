@@ -248,7 +248,8 @@ public class Options extends MyThinlet implements Constants {
     /*****************************************************************************/
 
     public void setTab(int index) {
-        setInteger(find("Tabs"), "selected", index);
+        // Disabled because Tabs are now flattened into a single scrolling panel
+        // setInteger(find("Tabs"), "selected", index);
     }
 
     /*****************************************************************************/

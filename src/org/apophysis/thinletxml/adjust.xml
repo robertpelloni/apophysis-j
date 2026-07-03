@@ -8,10 +8,12 @@
 			<panel weightx="1" weighty="3" halign="left" valign="top"
 				>
 				<button	name="btnUndo" icon="/images/adjust1.gif"
+					tooltip="Undo adjustment"
 					halign="left" weightx="0"
 					action="undo()"
 					/>
 				<button name="btnRedo" icon="/images/adjust2.gif"
+					tooltip="Redo adjustment"
 					halign="left" weightx="0"
 					action="redo()"
 					/>
@@ -70,6 +72,7 @@
 					halign="right" weightx="0"
 					/>
 				<textfield name="txtTime" columns="10"
+					tooltip="Adjust flame time parameter"
 					halign="right" valign="fill" weightx="0"
 					perform="timeChanged(this)"
 					/>
@@ -78,12 +81,12 @@
 	</panel>
 
 
-	<tabbedpane weightx="1" weighty="1" halign="fill" valign="fill"
-		name="PageControl"
-		placement="top" selected="1" >
+	<panel weightx="1" weighty="1" halign="fill" valign="fill"
+		name="PageControl" scrollable="true" columns="1"
+		>
 
 
-		<tab name="TabSheet1" text="  Camera  " icon="/images/main18.gif" >
+		<panel name="TabSheet1" text="  Camera  " icon="/images/main18.gif" border="true" >
 			<panel weightx="1" weighty="1" halign="fill" valign="fill"
 				columns="3" top="20" gap="5" bottom="5" >
 
@@ -97,6 +100,7 @@
 					value="0"
 					/>
 				<textfield name="txtZoom" weightx="1" 
+					tooltip="Adjust camera zoom"
 					perform="txtCameraChange()"
 					/>
 
@@ -110,6 +114,7 @@
 					value="0"
 					/>
 				<textfield name="txtCenterX" weightx="1"
+					tooltip="Adjust camera X position"
 					perform="txtCameraChange()"
 					/>
 
@@ -123,6 +128,7 @@
 					value="0"
 					/>
 				<textfield name="txtCenterY" weightx="1"
+					tooltip="Adjust camera Y position"
 					perform="txtCameraChange()"
 					/>
 
@@ -136,12 +142,13 @@
 					value="0"
 					/>
 				<textfield name="txtAngle" weightx="1"
+					tooltip="Adjust camera rotation angle"
 					perform="txtCameraChange()"
 					/>
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="TabSheet2" text="  Rendering  " icon="/images/main35.gif" >
+		<panel name="TabSheet2" text="  Rendering  " icon="/images/main35.gif" border="true" >
 	
 			<panel columns="1" >	
 				<panel  weightx="1" weighty="1" halign="fill" valign="fill"
@@ -157,6 +164,7 @@
 							value="500"
 							/>
 						<textfield name="txtGamma" weightx="1"
+							tooltip="Adjust render gamma"
 							perform="txtRenderChange()"
 							/>
 	
@@ -170,6 +178,7 @@
 							value="0"
 							/>
 						<textfield name="txtBrightness" weightx="1"
+							tooltip="Adjust render brightness"
 							perform="txtRenderChange()"
 							/>
 
@@ -183,6 +192,7 @@
 							value="0"
 							/>
 						<textfield name="txtVibrancy" weightx="1"
+							tooltip="Adjust render vibrancy"
 							perform="txtRenderChange()"
 							/>
 
@@ -208,9 +218,9 @@
 
 			</panel>
 
-		</tab>
+		</panel>
 
-		<tab name="TabSheet3" text="  Gradient  " icon="/images/main11.gif" >
+		<panel name="TabSheet3" text="  Gradient  " icon="/images/main11.gif" border="true" >
 
 			<panel weightx="1" weighty="1" halign="fill" valign="fill"
 				columns="1" top="20" gap="5" bottom="5" left="5" right="5" >
@@ -344,9 +354,9 @@
 				</panel>
 
 			</panel>
-		</tab>
+		</panel>
 
-		<tab name="TabSheet4" text="  Image size  " icon="/images/main51.gif" >
+		<panel name="TabSheet4" text="  Image size  " icon="/images/main51.gif" border="true" >
 
 			<panel weightx="1" weighty="1" halign="fill"  valign="fill"
 				top="20" left="5" right="5" bottom="0" gap="10"
@@ -361,6 +371,7 @@
 						alignment="right"
 						/>
 					<combobox name="txtWidth" weightx="1" halign="fill"
+						tooltip="Image width in pixels"
 						action="widthChanged(this,0)"
 						perform="widthChanged(this,1)"
 						>
@@ -376,6 +387,7 @@
 						/>
 
 					<combobox name="txtHeight" weightx="1" halign="fill"
+						tooltip="Image height in pixels"
 						action="heightChanged(this,0)"
 						perform="heightChanged(this,1)"
 						>
@@ -450,8 +462,8 @@
 
 				</panel>
 			</panel>
-		</tab>
+		</panel>
 
-	</tabbedpane>
+	</panel>
 	
 </panel>
