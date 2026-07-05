@@ -7,14 +7,10 @@ public class RendererTest {
 
     @Test
     public void testRendererInit() {
-        // Mock a thread target to avoid GUI coupling
-        ThreadTarget dummyTarget = new ThreadTarget() {
-            public void message(int msg) {}
-            public void progress(double value) {}
-            public void output(String msg) {}
-        };
+        // Use the newly created headless target instead of a local mock
+        HeadlessRendererTarget target = new HeadlessRendererTarget();
 
-        Renderer renderer = new Renderer(dummyTarget);
+        Renderer renderer = new Renderer(target);
         assertNotNull(renderer);
     }
 }
