@@ -8,10 +8,11 @@
 - Implement correct scrolling for panels.
 - Hide tooltip in certain circumstances.
 - Address deprecated warnings and `java.applet.Applet` removal.
-- Integrate a modern build system like Maven or Gradle.
-- Create automated CI/CD pipeline.
+- [x] Integrate a modern build system like Maven or Gradle.
+- [x] Create automated CI/CD pipeline.
 
 ## In Progress
+- Refactor UI: Extract monolithic `Thinlet` logic to allow JavaFX implementation in the future.
 
 
 ## Major Long-Term Plans

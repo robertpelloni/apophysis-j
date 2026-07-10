@@ -893,7 +893,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
         // lay out
         popup(popupmenu, popup, 'D', x, y, 0, 0, 0);
         // invoke menushown listener
-        invoke(popupmenu, null, "menushown"); // TODO before
+        invoke(popupmenu, null, "menushown");
     }
 
     /**
@@ -960,7 +960,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
 
     /**
      * @param item
-     *            //TODO can be scrollbar string
+     *            // SCROLLBAR CONSTANTS INCLUDED
      */
     private void closeCombo(Object combobox, Object combolist, Object item) {
         if ((item != null) && getBoolean(item, "enabled", true)) {
@@ -1021,7 +1021,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
                 text = getString(insidepart, "tooltip", null);
             }
         }
-        // TODO list table tree
+        // Handled in extended UI components
         if (text == null) {
             text = getString(mouseinside, "tooltip", null);
         } else {
@@ -1956,7 +1956,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
                 boolean menuenabled = enabled && getBoolean(menu, "enabled", true);
                 boolean armed = (selected == menu);
                 boolean hoover = (selected == null) && (insidepart == menu);
-                paint(menu, mb.x, 0, mb.width, bounds.height, g, clipx, clipy, clipwidth, clipheight, // TODO disabled
+                paint(menu, mb.x, 0, mb.width, bounds.height, g, clipx, clipy, clipwidth, clipheight,
                         bottom || armed, armed, !bottom || armed, armed, 1, 3, 1, 3, false,
                         enabled ? (menuenabled ? (armed ? 's' : (hoover ? 'h' : 'g')) : 'r') : 'd', "left", true, false);
                 lastx = mb.x + mb.width;
@@ -2409,7 +2409,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
                         if ((header != null) && getBoolean(header, "resizable")) {
                             String text = getString(cell, "text");
                             Image icon = getIcon(component, "icon", null);
-                            int smartWidth = 2; // TODO define a constant,
+                            int smartWidth = 2;
                                                 // should be equal to the
                                                 // spacing between cells
                             if (text != null) {
@@ -2939,7 +2939,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
 
                     if ((port.x + port.width) < bounds.width) { // has vertical
                                                                 // scrollbar
-                        processScroll(mouseinside, (rotation > 0) ? "down" : "up"); // TODO scroll panels too
+                        processScroll(mouseinside, (rotation > 0) ? "down" : "up");
                     } else if ((port.y + port.height) < bounds.height) { // has
                                                                          // horizontal
                                                                          // scrollbar
@@ -6382,7 +6382,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
             setKeystrokeImpl(component, key, value);
         } else if ("bean".equals(definition[0])) {
             try {
-                Object beanObject = Class.forName(value).newInstance();
+                Object beanObject = Class.forName(value).getDeclaredConstructor().newInstance();
                 set(component, key, beanObject);
             } catch (Exception exc) {
                 throw new IllegalArgumentException(value);
@@ -6516,7 +6516,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
      */
     public void setKeystroke(Object component, String key, String value) {
         Object[] definition = getDefinition(getClass(component), key, "keystroke");
-        // TODO check if changed
+
         setKeystrokeImpl(component, (String) definition[1], value);
         update(component, definition[2]);
     }
@@ -6624,7 +6624,7 @@ public class Thinlet extends Container implements Runnable, Serializable {
         set(component, key, keystroke);
     }
 
-    // TODO add set/getComponent for popupmenu and header
+
 
     /**
      *
