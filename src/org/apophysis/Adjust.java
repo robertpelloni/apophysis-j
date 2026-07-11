@@ -151,7 +151,8 @@ public class Adjust extends MyThinlet implements Constants, ThreadTarget {
     /*****************************************************************************/
 
     public void setTab(int index) {
-        setInteger(find("PageControl"), "selected", index);
+        // Disabled because tabs are flattened into a scrollable panel
+        // setInteger(find("PageControl"), "selected", index);
     }
 
     /*****************************************************************************/

@@ -344,13 +344,14 @@
 					>
 					<label text="Transform" />
 					<combobox name="cbTransforms" editable="false" 
+						tooltip="Select active transform"
 						foreground="#FFFFFF" background="#000000"
 						action="cbTransformsChange(this)" >
 					</combobox>
 				</panel>
 
-				<tabbedpane weightx="1" weighty="1" halign="fill" valign="fill">
-					<tab text="Triangle" >
+				<panel scrollable="true" columns="1" weightx="1" weighty="1" halign="fill" valign="fill">
+					<panel text="Triangle" border="true" >
 						<panel columns="1" weightx="1" weighty="1"
 							halign="fill" valign="fill" >
 
@@ -360,25 +361,31 @@
 
 								<label name="LabelA" text="X:" />
 								<textfield name="txtAx"
+									tooltip="Triangle A X-coordinate"
 									perform="cornerEditKeyPress()"
 									/>
 								<textfield name="txtAy"
+									tooltip="Triangle A Y-coordinate"
 									perform="cornerEditKeyPress()"
 									/>
 							
 								<label name="LabelC" text="Y:" />
 								<textfield name="txtCx" 
+									tooltip="Triangle C X-coordinate"
 									perform="cornerEditKeyPress()"
 									/>
 								<textfield name="txtCy" 
+									tooltip="Triangle C Y-coordinate"
 									perform="cornerEditKeyPress()"
 									/>
 
 								<label name="LabelB" text="O:" />
 								<textfield name="txtBx" 
+									tooltip="Triangle B X-coordinate"
 									perform="cornerEditKeyPress()"
 									/>
 								<textfield name="txtBy" 
+									tooltip="Triangle B Y-coordinate"
 									perform="cornerEditKeyPress()"
 									/>
 							</panel>
@@ -402,6 +409,7 @@
 									action="btTrgRotateLeftClick()"
 									/>
 								<combobox name="txtTrgRotateValue"
+									tooltip="Degrees to rotate the triangle"
 									text="5" columns="6"
 									>
 									<choice text="5" />
@@ -560,9 +568,9 @@
 							</panel>
 
 						</panel>
-					</tab>
+					</panel>
 
-					<tab text="Xform">
+					<panel text="Xform" border="true" >
 						<panel columns="1" weightx="1" weighty="1"
 							halign="fill" valign="fill" >
 
@@ -703,27 +711,27 @@
 
 						</panel>
 
-					</tab>
+					</panel>
 
-					<tab text="Var.">
+					<panel text="Var." border="true" >
 						<panel name="varlist" columns="2" 
 						top="5"	gap="2"
 						scrollable="true"
 						weightx="1" weighty="1"
 						halign="fill" valign="fill"
 						/>
-					</tab>
+					</panel>
 
-					<tab text="Param.">
+					<panel text="Param." border="true" >
 						<panel name="paramlist" columns="2" 
 						top="5" gap="2"
 						scrollable="true"
 						weightx="1" weighty="1"
 						halign="fill" valign="fill"
 						/>
-					</tab>
+					</panel>
 
-					<tab text="Colors">
+					<panel text="Colors" border="true" >
 
 						<panel columns="1"	weightx="1" weighty="1"
 							halign="fill" valign="fill" >
@@ -824,8 +832,8 @@
 							</panel>
 
 						</panel>
-					</tab>
-				</tabbedpane>
+					</panel>
+				</panel>
 			</panel>
 
 		</panel>

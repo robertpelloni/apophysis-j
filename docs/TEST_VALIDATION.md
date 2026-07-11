@@ -24,3 +24,14 @@ All unit tests are confirmed to successfully hook into the GitHub Actions pipeli
 8.  **`HeadlessRendererTargetTest.java`**: Verified that the headless implementation correctly tracks progress and completion states.
 
 ## Validation Status: SUCCESS
+
+## Staging Deployment Validation (v2.10.19)
+The deployment artifact was validated via `mvn verify`. The test suite verified the integrity of the Maven migration, running 8 tests successfully with 0 failures and 0 errors.
+
+During the staging verification, two runtime crashes were identified and resolved to ensure headless compatibility using `xvfb-run`:
+- **`UnknownHostException`**: Resolved an immediate startup crash caused by the legacy `getSheepVariations()` trying to communicate with `electricsheep.wikispaces.com`, a permanently offline domain. This code path was safely bypassed.
+- **`NoClassDefFoundError`**: Resolved a missing `rhino` class issue by reconfiguring the Maven build pipeline (`pom.xml`) to use `maven-assembly-plugin`, generating a `jar-with-dependencies` artifact to correctly bundle the Rhino scripting engine.
+
+### UI & Headless Rendering Testing Additions
+Added `ApophysisTest.java` to explicitly test core `Constants` resolving and ensuring the main class `Apophysis.java` correctly loads and parses CLI arguments (`--headless`, `--in`, `--out`).
+The full test suite execution, covering 9 tests across the UI framework (`ThinletTest`), math/geometry logic (`TriangleTest`), variations (`VariationTest`), and the new CLI interface passed with 0 errors or failures, verifying that the new feature implementation and Maven migration are stable.

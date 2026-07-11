@@ -172,7 +172,8 @@ public class Render extends MyThinlet implements Constants, ThreadTarget {
     /*****************************************************************************/
 
     public void setTab(int index) {
-        setInteger(find("PageCtrl"), "selected", index);
+        // Disabled because tabs are flattened into a scrollable panel
+        // setInteger(find("PageCtrl"), "selected", index);
     }
 
     /*****************************************************************************/

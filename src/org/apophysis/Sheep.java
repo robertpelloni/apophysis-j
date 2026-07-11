@@ -302,6 +302,9 @@ public class Sheep extends Thread {
 	/******************************************************************************/
 
 	static void getSheepVariations() {
+		// Disable sheep parsing as electricsheep.wikispaces.com is permanently offline
+		// and throws UnknownHostException on app startup
+		if (true) return;
 		Map<String, Boolean> h = new HashMap<String, Boolean>();
 
 		try {
