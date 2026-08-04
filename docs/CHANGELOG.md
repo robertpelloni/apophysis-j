@@ -64,17 +64,27 @@
 - Executed EXECUTIVE PROTOCOL: REPOSITORY SYNCHRONIZATION & INTELLIGENT MERGE.
 - Synchronized local repository with remote master.
 - Resolved branch states and verified submodules.
+- Configured `maven-assembly-plugin` to output a fat jar to resolve headless Rhino missing dependency crashes (`NoClassDefFoundError`).
+- Successfully bypassed legacy `electricsheep` network crash (`UnknownHostException`) to fix runtime deployments.
+- Reconfigured CI/CD pipeline (`maven.yml`) to enforce automated test coverage via `mvn verify`.
+- Added comprehensive tooltips across the UI (Editor, Render, Adjust, Options) to improve accessibility and workflow intuitiveness.
+- Verified test suite reliability (8 unit tests pass with 0 regressions) and closed out v2.10.19 staging deployment loop.
 
-## [2.10.20] - 2026-06-25
-- Executed EXECUTIVE PROTOCOL: REPOSITORY SYNCHRONIZATION & INTELLIGENT MERGE.
-- Forward merged outstanding UI deprecation refactoring feature branch.
-- Validated build pipeline after cleanup sequence.
+## [v2.10.20] - 2026-07-06
 
+### Added
+- **Headless CLI**: Implemented batch processing via CLI (`--headless`, `--in`, `--out`) bypassing the Thinlet UI completely.
+- **Maven Central Profile**: Added the `release` profile in `pom.xml` integrating `maven-source-plugin`, `maven-javadoc-plugin`, `maven-gpg-plugin`, and `nexus-staging-maven-plugin` to formalize OSSRH deployments.
+- **Artifact Preservation**: GitHub Actions pipeline now natively bundles and preserves the `jar-with-dependencies` FAT JAR for offline execution.
+- **UI Tooltips**: Injected comprehensive tooltips across the primary editors (`render.xml`, `options.xml`, `editor.xml`).
 
-## [2.10.19] - Release Version Updates
-- Concluded the Maven migration and validation.
-- Fully passed all automated testing suites spanning rendering logic, UI bounds, and geometric manipulation.
-- Resolved headless rendering architecture by implementing `HeadlessRendererTarget` and validating batch pipelines without GUI bounds.
-- Cleaned up deprecated Ant configurations.
-- Tagged codebase with release v2.10.19 and handed off artifact uploading workflows to GitHub CI/CD Actions.
-- 2.10.20: Deployment readiness confirmed. Moving towards UI refactoring.
+### Changed
+- **Build Architecture**: Finalized the complete transition away from legacy Ant builds. Deleted `build.xml` and `build.properties`.
+- **UI Architecture**: Flattened outdated `<tabbedpane>` tags into continuous `<panel scrollable="true">` elements to prevent UX clipping.
+
+### Fixed
+- Early returned network logic attempting to ping the defunct `electricsheep.wikispaces.com` domain, resolving fatal `UnknownHostException` startup crashes.
+- Bypassed missing Rhino runtime errors via proper Maven packaging.
+
+### Analyzed
+- Generated the `SCRIPTING_DELTA_REPORT.md` confirming the requirement to remain on the Mozilla Rhino engine due to legacy user scripts relying on deep `Context.enter()` bindings.
